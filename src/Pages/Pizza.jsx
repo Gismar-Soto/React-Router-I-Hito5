@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";  // Para obtener el ID desde la URL
+import { useParams } from "react-router-dom";  
 
 const Pizza = () => {
   const [pizza, setPizza] = useState(null);
@@ -35,7 +35,7 @@ const Pizza = () => {
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
-      {/* Botón para añadir al carrito */}
+      {/* Botón para añadir */}
       <button className="pizza-btn pizza-btn-dark">Añadir al carrito</button>
     </div>
   );

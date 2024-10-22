@@ -4,7 +4,7 @@ import { FaPizzaSlice, FaShoppingCart, FaEye } from "react-icons/fa"; // Importa
 const Home = () => {
   const [pizzas, setPizzas] = useState([]);
   const [cart, setCart] = useState(() => {
-    // Cargamos el carrito desde localStorage (si existe)
+    // Cargamos el carrito desde localStorage
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });

@@ -7,7 +7,7 @@ const Login = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular para validar emails
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // validar emails
 
     if (!emailPattern.test(email)) {
       newErrors.email = 'Por favor ingrese un correo electrónico válido.';
@@ -24,7 +24,7 @@ const Login = () => {
     e.preventDefault();
     if (validateForm()) {
       console.log('Iniciando sesión con:', { email, password });
-      // Lógica de inicio de sesión aquí
+      // Lógica de inicio de sesión 
     }
   };
 

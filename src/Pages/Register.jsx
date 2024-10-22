@@ -28,7 +28,7 @@ const Register = () => {
     e.preventDefault();
     if (validateForm()) {
       console.log('Registrando usuario con:', { email, password });
-      // Lógica de registro aquí
+      // Lógica de registro 
     }
   };
 

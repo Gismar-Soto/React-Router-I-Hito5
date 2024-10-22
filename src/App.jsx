@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import Register from './Pages/Register';
@@ -7,25 +7,23 @@ import Cart from './Pages/Cart';
 import Pizza from './Pages/Pizza';
 import Profile from './Pages/Profile';
 import NotFound from './Pages/NotFound';
-import Navbar from './components/Navbar';  
-import Footer from './components/Footer';
-import Header from './components/Header';  
+import Layout from './components/Layout'; 
 
 const App = () => {
   return (
     <Router>
-      <Navbar />  
-      <Header />  
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />  
-        <Route path="/login" element={<Login />} />  
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/pizza/p001" element={<Pizza />} />
-        <Route path="/profile" element={<Profile />} />
+        {/* Rutas con Layout que incluye Navbar, Header y Footer */}
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/register" element={<Layout><Register /></Layout>} />  
+        <Route path="/login" element={<Layout><Login /></Layout>} />  
+        <Route path="/cart" element={<Layout><Cart /></Layout>} />
+        <Route path="/pizza/p001" element={<Layout><Pizza /></Layout>} />
+        <Route path="/profile" element={<Layout><Profile /></Layout>} />
+
+        {/* Ruta para NotFound SIN Layout */}
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
     </Router>
   );
 };

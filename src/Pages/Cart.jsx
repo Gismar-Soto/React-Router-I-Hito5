@@ -24,7 +24,7 @@ const Cart = () => {
     setTotal(newTotal.toLocaleString('es-ES'));
   }, [cart]); // Se ejecuta cada vez que el carrito cambie
 
-  // Función para incrementar la cantidad de un producto
+  // Función para sumar la cantidad de un producto
   const incrementQuantity = (id) => {
     const updatedCart = cart.map(item =>
       item.id === id ? { ...item, quantity: item.quantity + 1 } : item
@@ -33,7 +33,7 @@ const Cart = () => {
     localStorage.setItem('cart', JSON.stringify(updatedCart)); // Guardamos el carrito actualizado en localStorage
   };
 
-  // Función para decrementar la cantidad de un producto
+  // Función para disminuir la cantidad de un producto
   const decrementQuantity = (id) => {
     const updatedCart = cart.map(item =>
       item.id === id && item.quantity > 1
@@ -71,7 +71,6 @@ const Cart = () => {
                     <h5 className="mb-1">{item.name}</h5>
                     <p className="mb-1">Cantidad: {item.quantity}</p>
                     <p className="mb-1">Precio total: ${(item.price * item.quantity).toLocaleString('es-ES')}</p>
-                    {/* Mover los botones de incrementar y decrementar debajo de la descripción */}
                     <div className="quantity-controls d-flex align-items-center mt-2">
                       <button onClick={() => decrementQuantity(item.id)} className="btn btn-secondary btn-sm">-</button>
                       <span className="quantity-display mx-2">{item.quantity}</span>
@@ -79,7 +78,6 @@ const Cart = () => {
                     </div>
                   </div>
                 </div>
-                {/* Botón de eliminar alineado */}
                 <button onClick={() => removeFromCart(item.id)} className="btn btn-danger btn-sm ms-3">
                   <FontAwesomeIcon icon={faTrash} />
                 </button>
